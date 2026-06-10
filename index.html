@@ -1,0 +1,1250 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portafolio de Duvan Federico Sarmiento Lugo – Full Stack Developer & Data Analyst Jr."
+    />
+    <title>Duvan Sarmiento | Developer & Data Analyst</title>
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      :root {
+        --bg: #0d0f14;
+        --bg2: #13161e;
+        --bg3: #1a1e29;
+        --accent: #6c63ff;
+        --accent2: #a78bfa;
+        --text: #e2e8f0;
+        --muted: #8892a4;
+        --border: rgba(108, 99, 255, 0.18);
+        --card: rgba(26, 30, 41, 0.85);
+        --font-display: "Space Grotesk", sans-serif;
+        --font-mono: "JetBrains Mono", monospace;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-display);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      /* ── NAV ── */
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+        background: rgba(13, 15, 20, 0.88);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+        padding: 1rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .nav-logo {
+        font-family: var(--font-mono);
+        font-size: 1.1rem;
+        color: var(--accent2);
+        text-decoration: none;
+      }
+      .nav-logo span {
+        color: var(--accent);
+      }
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
+      .nav-links a {
+        color: var(--muted);
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.2s;
+      }
+      .nav-links a:hover {
+        color: var(--accent2);
+      }
+
+      /* ── HERO ── */
+      #hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: 7rem 2rem 4rem;
+        position: relative;
+        overflow: hidden;
+      }
+      #hero::before {
+        content: "";
+        position: absolute;
+        top: -200px;
+        right: -200px;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(
+          circle,
+          rgba(108, 99, 255, 0.15) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+      .hero-inner {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .hero-tag {
+        font-family: var(--font-mono);
+        font-size: 0.85rem;
+        color: var(--accent);
+        letter-spacing: 2px;
+        margin-bottom: 1.2rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .hero-tag::before {
+        content: "";
+        display: inline-block;
+        width: 30px;
+        height: 1px;
+        background: var(--accent);
+      }
+      h1 {
+        font-size: clamp(2.5rem, 6vw, 5rem);
+        font-weight: 700;
+        line-height: 1.05;
+        margin-bottom: 0.3rem;
+      }
+      h1 .name-accent {
+        color: var(--accent2);
+      }
+      .hero-role {
+        font-size: clamp(1rem, 2.5vw, 1.4rem);
+        color: var(--muted);
+        font-weight: 400;
+        margin-bottom: 1.5rem;
+      }
+      .hero-desc {
+        max-width: 580px;
+        color: var(--muted);
+        font-size: 1rem;
+        margin-bottom: 2.5rem;
+        line-height: 1.75;
+      }
+      .hero-btns {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      .btn {
+        padding: 0.75rem 1.75rem;
+        border-radius: 6px;
+        font-family: var(--font-display);
+        font-size: 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.25s;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .btn-primary {
+        background: var(--accent);
+        color: #fff;
+        border: none;
+      }
+      .btn-primary:hover {
+        background: var(--accent2);
+        transform: translateY(-2px);
+      }
+      .btn-outline {
+        background: transparent;
+        color: var(--text);
+        border: 1px solid var(--border);
+      }
+      .btn-outline:hover {
+        border-color: var(--accent);
+        color: var(--accent2);
+        transform: translateY(-2px);
+      }
+
+      .hero-social {
+        margin-top: 3rem;
+        display: flex;
+        gap: 1.2rem;
+      }
+      .hero-social a {
+        color: var(--muted);
+        font-size: 1.25rem;
+        transition: color 0.2s;
+        text-decoration: none;
+      }
+      .hero-social a:hover {
+        color: var(--accent2);
+      }
+
+      /* ── SECTIONS ── */
+      section {
+        padding: 5rem 2rem;
+      }
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      .section-label {
+        font-family: var(--font-mono);
+        font-size: 0.8rem;
+        color: var(--accent);
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+      }
+      .section-title {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        font-weight: 700;
+        margin-bottom: 3rem;
+        position: relative;
+        display: inline-block;
+      }
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 40px;
+        height: 3px;
+        background: var(--accent);
+        border-radius: 2px;
+      }
+
+      /* ── ABOUT ── */
+      #about {
+        background: var(--bg2);
+      }
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: start;
+      }
+      .about-text p {
+        color: var(--muted);
+        margin-bottom: 1rem;
+        line-height: 1.8;
+      }
+      .about-details {
+        margin-top: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+      .about-detail {
+        display: flex;
+        gap: 0.75rem;
+        align-items: center;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+      .about-detail i {
+        color: var(--accent);
+        width: 16px;
+      }
+      .about-detail a {
+        color: var(--accent2);
+        text-decoration: none;
+      }
+      .about-detail a:hover {
+        text-decoration: underline;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+      }
+      .skill-group h4 {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--accent);
+        margin-bottom: 0.75rem;
+        font-family: var(--font-mono);
+      }
+      .skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .skill-tag {
+        background: var(--bg3);
+        border: 1px solid var(--border);
+        color: var(--text);
+        padding: 0.3rem 0.75rem;
+        border-radius: 4px;
+        font-size: 0.82rem;
+        font-family: var(--font-mono);
+      }
+
+      /* ── EXPERIENCE ── */
+      #experience {
+        background: var(--bg);
+      }
+      .timeline {
+        position: relative;
+        padding-left: 2rem;
+      }
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 8px;
+        width: 1px;
+        height: calc(100% - 8px);
+        background: var(--border);
+      }
+      .timeline-item {
+        position: relative;
+        margin-bottom: 2.5rem;
+      }
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -2.4rem;
+        top: 8px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--accent);
+        border: 2px solid var(--bg);
+      }
+      .timeline-date {
+        font-family: var(--font-mono);
+        font-size: 0.78rem;
+        color: var(--accent);
+        margin-bottom: 0.3rem;
+      }
+      .timeline-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0.2rem;
+      }
+      .timeline-company {
+        color: var(--accent2);
+        font-size: 0.9rem;
+        margin-bottom: 0.75rem;
+      }
+      .timeline-desc {
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+      .timeline-desc li {
+        margin-bottom: 0.35rem;
+        padding-left: 1rem;
+        position: relative;
+      }
+      .timeline-desc li::before {
+        content: "▸";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-size: 0.75rem;
+      }
+
+      /* ── PROJECTS ── */
+      #projects {
+        background: var(--bg2);
+      }
+      .projects-tabs {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+      }
+      .tab-btn {
+        padding: 0.5rem 1.25rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-family: var(--font-display);
+        cursor: pointer;
+        border: 1px solid var(--border);
+        background: transparent;
+        color: var(--muted);
+        transition: all 0.2s;
+      }
+      .tab-btn.active,
+      .tab-btn:hover {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
+      }
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
+      }
+      .project-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 1.5rem;
+        transition:
+          transform 0.25s,
+          border-color 0.25s;
+        display: flex;
+        flex-direction: column;
+      }
+      .project-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--accent);
+      }
+      .project-card[data-cat] {
+        display: flex;
+      }
+      .project-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+      }
+      .project-icon {
+        font-size: 1.5rem;
+      }
+      .project-links {
+        display: flex;
+        gap: 0.75rem;
+      }
+      .project-links a {
+        color: var(--muted);
+        font-size: 1rem;
+        transition: color 0.2s;
+      }
+      .project-links a:hover {
+        color: var(--accent2);
+      }
+      .project-title {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+      .project-desc {
+        color: var(--muted);
+        font-size: 0.88rem;
+        line-height: 1.7;
+        flex: 1;
+        margin-bottom: 1rem;
+      }
+      .project-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+      }
+      .stack-tag {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        color: var(--accent2);
+        background: rgba(108, 99, 255, 0.1);
+        padding: 0.2rem 0.6rem;
+        border-radius: 3px;
+      }
+      .live-badge {
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        color: #4ade80;
+        background: rgba(74, 222, 128, 0.1);
+        border: 1px solid rgba(74, 222, 128, 0.3);
+        padding: 0.2rem 0.6rem;
+        border-radius: 20px;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+      }
+      .live-badge::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        background: #4ade80;
+        border-radius: 50%;
+        animation: pulse 1.5s infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.4;
+        }
+      }
+
+      /* ── CERTS ── */
+      #certs {
+        background: var(--bg);
+      }
+      .certs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.2rem;
+      }
+      .cert-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 1.25rem 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        transition: border-color 0.2s;
+      }
+      .cert-card:hover {
+        border-color: var(--accent);
+      }
+      .cert-icon {
+        width: 42px;
+        height: 42px;
+        background: rgba(108, 99, 255, 0.12);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        flex-shrink: 0;
+      }
+      .cert-info {
+        flex: 1;
+      }
+      .cert-name {
+        font-size: 0.92rem;
+        font-weight: 600;
+        margin-bottom: 0.2rem;
+      }
+      .cert-issuer {
+        font-size: 0.8rem;
+        color: var(--accent2);
+      }
+      .cert-date {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        color: var(--muted);
+      }
+
+      /* ── CONTACT ── */
+      #contact {
+        background: var(--bg2);
+      }
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: start;
+      }
+      .contact-info p {
+        color: var(--muted);
+        line-height: 1.8;
+        margin-bottom: 2rem;
+      }
+      .contact-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.9rem;
+      }
+      .contact-link {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: var(--muted);
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: color 0.2s;
+      }
+      .contact-link i {
+        color: var(--accent);
+        width: 18px;
+      }
+      .contact-link:hover {
+        color: var(--accent2);
+      }
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+      }
+      .form-group label {
+        font-size: 0.82rem;
+        color: var(--muted);
+        font-family: var(--font-mono);
+      }
+      .form-group input,
+      .form-group textarea {
+        background: var(--bg3);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 0.75rem 1rem;
+        color: var(--text);
+        font-family: var(--font-display);
+        font-size: 0.95rem;
+        transition: border-color 0.2s;
+        resize: none;
+      }
+      .form-group input:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: var(--accent);
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background: var(--bg);
+        border-top: 1px solid var(--border);
+        padding: 2rem;
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+      footer span {
+        color: var(--accent2);
+      }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 768px) {
+        nav .nav-links {
+          display: none;
+        }
+        .about-grid,
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+        .skills-grid {
+          grid-template-columns: 1fr;
+        }
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+        h1 {
+          font-size: 2.4rem;
+        }
+      }
+
+      /* hidden class for filter */
+      .hidden {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <a class="nav-logo" href="#hero"
+        ><span>&lt;</span>Duvan<span>/&gt;</span></a
+      >
+      <ul class="nav-links">
+        <li><a href="#about">Sobre mí</a></li>
+        <li><a href="#experience">Experiencia</a></li>
+        <li><a href="#projects">Proyectos</a></li>
+        <li><a href="#certs">Certificaciones</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hero-inner">
+        <div class="hero-tag">Disponible para trabajar</div>
+        <h1>Duvan <span class="name-accent">Sarmiento</span></h1>
+        <p class="hero-role">Full Stack Developer &amp; Data Analyst Jr.</p>
+        <p class="hero-desc">
+          Ingeniero de Sistemas en formación (9° semestre) con experiencia real
+          construyendo aplicaciones web y modelos de Machine Learning
+          desplegados en producción. Me muevo entre el backend, el frontend y
+          los datos.
+        </p>
+        <div class="hero-btns">
+          <a class="btn btn-primary" href="#projects"
+            ><i class="fa-solid fa-rocket"></i> Ver proyectos</a
+          >
+          <a class="btn btn-outline" href="#contact"
+            ><i class="fa-solid fa-paper-plane"></i> Contactarme</a
+          >
+        </div>
+        <div class="hero-social">
+          <a href="https://github.com/Zigartpro" target="_blank" title="GitHub"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="https://linkedin.com/in/duvansarmiento"
+            target="_blank"
+            title="LinkedIn"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="mailto:lugosarmiento7@gmail.com" title="Email"
+            ><i class="fa-solid fa-envelope"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
+        <p class="section-label">// quien soy</p>
+        <h2 class="section-title">Sobre mí</h2>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              Soy desarrollador Full Stack y analista de datos con doble visión
+              técnica: construyo sistemas desde cero y los optimizo mediante
+              análisis profundo. Tengo 13 meses de experiencia profesional en
+              Mulieva S.A.S., donde desarrollé un sistema de control de
+              inventario y luego pasé a un rol de análisis de datos.
+            </p>
+            <p>
+              Me apasiona el cruce entre el desarrollo de software y la ciencia
+              de datos — dos disciplinas que en la práctica son inseparables.
+              Aprendo rápido, trabajo bien bajo presión y disfruto construir
+              cosas que funcionan de verdad.
+            </p>
+            <div class="about-details">
+              <div class="about-detail">
+                <i class="fa-solid fa-location-dot"></i> Facatativá, Colombia
+              </div>
+              <div class="about-detail">
+                <i class="fa-solid fa-graduation-cap"></i> Ing. Sistemas —
+                Universidad de Cundinamarca (9° sem.)
+              </div>
+              <div class="about-detail">
+                <i class="fa-solid fa-envelope"></i
+                ><a href="mailto:lugosarmiento7@gmail.com"
+                  >lugosarmiento7@gmail.com</a
+                >
+              </div>
+              <div class="about-detail">
+                <i class="fab fa-github"></i
+                ><a href="https://github.com/Zigartpro" target="_blank"
+                  >github.com/Zigartpro</a
+                >
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="skills-grid">
+              <div class="skill-group">
+                <h4>Lenguajes</h4>
+                <div class="skill-tags">
+                  <span class="skill-tag">Python</span>
+                  <span class="skill-tag">Java</span>
+                  <span class="skill-tag">JavaScript</span>
+                  <span class="skill-tag">HTML/CSS</span>
+                  <span class="skill-tag">SQL</span>
+                </div>
+              </div>
+              <div class="skill-group">
+                <h4>Frameworks</h4>
+                <div class="skill-tags">
+                  <span class="skill-tag">Django</span>
+                  <span class="skill-tag">Flask</span>
+                  <span class="skill-tag">Spring</span>
+                </div>
+              </div>
+              <div class="skill-group">
+                <h4>Data & ML</h4>
+                <div class="skill-tags">
+                  <span class="skill-tag">Scikit-learn</span>
+                  <span class="skill-tag">TensorFlow</span>
+                  <span class="skill-tag">Pandas</span>
+                  <span class="skill-tag">Power BI</span>
+                </div>
+              </div>
+              <div class="skill-group">
+                <h4>Bases de datos</h4>
+                <div class="skill-tags">
+                  <span class="skill-tag">MySQL</span>
+                  <span class="skill-tag">PostgreSQL</span>
+                  <span class="skill-tag">SQL Server</span>
+                </div>
+              </div>
+              <div class="skill-group">
+                <h4>Herramientas</h4>
+                <div class="skill-tags">
+                  <span class="skill-tag">Git</span>
+                  <span class="skill-tag">Docker</span>
+                  <span class="skill-tag">VS Code</span>
+                  <span class="skill-tag">Render</span>
+                </div>
+              </div>
+              <div class="skill-group">
+                <h4>Metodologías</h4>
+                <div class="skill-tags">
+                  <span class="skill-tag">Scrum</span>
+                  <span class="skill-tag">XP</span>
+                  <span class="skill-tag">Cascada</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="container">
+        <p class="section-label">// trayectoria</p>
+        <h2 class="section-title">Experiencia</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">Nov 2023 — Dic 2024 · 13 meses</div>
+            <div class="timeline-title">
+              Analista Junior &amp; Desarrollador de Software
+            </div>
+            <div class="timeline-company">
+              Mulieva S.A.S. · Bogotá, Colombia
+            </div>
+            <ul class="timeline-desc">
+              <li>
+                Desarrollé un sistema de control de inventario desde cero para
+                uso interno de la empresa.
+              </li>
+              <li>
+                Análisis y procesamiento de datos desde bases MySQL con Python
+                para soporte a aplicaciones internas.
+              </li>
+              <li>
+                Generé reportes técnicos y apoyé análisis de métricas para
+                optimización de procesos.
+              </li>
+              <li>
+                Trabajo bajo metodología Scrum en ciclos de entrega iterativos.
+              </li>
+            </ul>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2022 — Actualidad</div>
+            <div class="timeline-title">
+              Ingeniería en Sistemas y Computación
+            </div>
+            <div class="timeline-company">
+              Universidad de Cundinamarca · Facatativá
+            </div>
+            <ul class="timeline-desc">
+              <li>
+                9° semestre cursado. Enfoque en desarrollo de software,
+                inteligencia artificial y redes.
+              </li>
+              <li>
+                Proyectos académicos integradores con despliegue en producción.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="container">
+        <p class="section-label">// lo que he construido</p>
+        <h2 class="section-title">Proyectos</h2>
+
+        <div class="projects-tabs">
+          <button class="tab-btn active" data-filter="all">Todos</button>
+          <button class="tab-btn" data-filter="ml">Machine Learning</button>
+          <button class="tab-btn" data-filter="web">Web</button>
+          <button class="tab-btn" data-filter="data">Datos</button>
+        </div>
+
+        <div class="projects-grid" id="projects-grid">
+          <!-- KNN Voto -->
+          <div class="project-card" data-cat="ml">
+            <div class="project-top">
+              <span class="project-icon">🗳️</span>
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  gap: 0.4rem;
+                  align-items: flex-end;
+                "
+              >
+                <span class="live-badge">Live</span>
+                <div class="project-links">
+                  <a
+                    href="https://voto-knn.onrender.com/"
+                    target="_blank"
+                    title="Demo"
+                    ><i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></a>
+                  <a
+                    href="https://github.com/Zigartpro/Machine_Learning/tree/main/proyecto-knn"
+                    target="_blank"
+                    title="Código"
+                    ><i class="fab fa-github"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="project-title">
+              Predicción de Intención de Voto — KNN
+            </div>
+            <div class="project-desc">
+              Sistema web que clasifica la intención de voto de un ciudadano a
+              partir de variables socioeconómicas. Devuelve la predicción, nivel
+              de confianza y K óptimo. Desplegado con API Flask.
+            </div>
+            <div class="project-stack">
+              <span class="stack-tag">Python</span
+              ><span class="stack-tag">Flask</span>
+              <span class="stack-tag">Scikit-learn</span
+              ><span class="stack-tag">KNN</span>
+              <span class="stack-tag">JavaScript</span
+              ><span class="stack-tag">Render</span>
+            </div>
+          </div>
+
+          <!-- Hospitales -->
+          <div class="project-card" data-cat="ml">
+            <div class="project-top">
+              <span class="project-icon">🏥</span>
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  gap: 0.4rem;
+                  align-items: flex-end;
+                "
+              >
+                <span class="live-badge">Live</span>
+                <div class="project-links">
+                  <a
+                    href="https://hospitales-rr81.onrender.com/"
+                    target="_blank"
+                    title="Demo"
+                    ><i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></a>
+                  <a
+                    href="https://github.com/Zigartpro/Machine_Learning/tree/main/hospital-placement"
+                    target="_blank"
+                    title="Código"
+                    ><i class="fab fa-github"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="project-title">Ubicación Óptima de Hospitales</div>
+            <div class="project-desc">
+              Dashboard interactivo que aplica un algoritmo tipo K-Means para
+              encontrar las posiciones óptimas de hospitales en una cuadrícula
+              urbana, minimizando distancias a las casas.
+            </div>
+            <div class="project-stack">
+              <span class="stack-tag">Python</span
+              ><span class="stack-tag">Flask</span>
+              <span class="stack-tag">NumPy</span
+              ><span class="stack-tag">K-Means</span>
+              <span class="stack-tag">Canvas JS</span
+              ><span class="stack-tag">Render</span>
+            </div>
+          </div>
+
+          <!-- MusicIA -->
+          <div class="project-card" data-cat="ml">
+            <div class="project-top">
+              <span class="project-icon">🎵</span>
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  gap: 0.4rem;
+                  align-items: flex-end;
+                "
+              >
+                <span class="live-badge">Live</span>
+                <div class="project-links">
+                  <a
+                    href="https://recomendador-mml.onrender.com/"
+                    target="_blank"
+                    title="Demo"
+                    ><i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></a>
+                  <a
+                    href="https://github.com/Zigartpro/Machine_Learning/tree/main/music-recommender"
+                    target="_blank"
+                    title="Código"
+                    ><i class="fab fa-github"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="project-title">
+              MusicIA Colombia — Recomendador Musical
+            </div>
+            <div class="project-desc">
+              Sistema de recomendación de música colombiana basado en ML.
+              Analiza preferencias del usuario y sugiere canciones usando
+              algoritmos de similitud y clasificación.
+            </div>
+            <div class="project-stack">
+              <span class="stack-tag">Python</span
+              ><span class="stack-tag">Flask</span>
+              <span class="stack-tag">Scikit-learn</span
+              ><span class="stack-tag">Render</span>
+            </div>
+          </div>
+
+          <!-- Predicción fútbol -->
+          <div class="project-card" data-cat="data">
+            <div class="project-top">
+              <span class="project-icon">⚽</span>
+              <div class="project-links">
+                <a
+                  href="https://github.com/Zigartpro/Prediccion"
+                  target="_blank"
+                  title="Código"
+                  ><i class="fab fa-github"></i
+                ></a>
+              </div>
+            </div>
+            <div class="project-title">
+              Predicción de Partidos — Premier League
+            </div>
+            <div class="project-desc">
+              Modelo ML que predice el ganador de partidos con porcentaje de
+              probabilidad. Pipeline completo: web scraping → limpieza →
+              entrenamiento → visualización → SQL.
+            </div>
+            <div class="project-stack">
+              <span class="stack-tag">Python</span
+              ><span class="stack-tag">Scikit-learn</span>
+              <span class="stack-tag">BeautifulSoup</span
+              ><span class="stack-tag">Pandas</span
+              ><span class="stack-tag">MySQL</span>
+            </div>
+          </div>
+
+          <!-- E-commerce -->
+          <div class="project-card" data-cat="web">
+            <div class="project-top">
+              <span class="project-icon">🛒</span>
+              <div class="project-links">
+                <a
+                  href="https://github.com/Zigartpro/E-commerce"
+                  target="_blank"
+                  title="Código"
+                  ><i class="fab fa-github"></i
+                ></a>
+              </div>
+            </div>
+            <div class="project-title">E-Commerce Deportivo</div>
+            <div class="project-desc">
+              Plataforma web full stack para venta de artículos deportivos.
+              Incluye CRUD de productos, gestión de usuarios con roles, control
+              de inventario e imágenes.
+            </div>
+            <div class="project-stack">
+              <span class="stack-tag">Django</span
+              ><span class="stack-tag">MySQL</span>
+              <span class="stack-tag">HTML/CSS</span
+              ><span class="stack-tag">JavaScript</span>
+            </div>
+          </div>
+
+          <!-- Sistema Inventario .NET -->
+          <div class="project-card" data-cat="web">
+            <div class="project-top">
+              <span class="project-icon">📦</span>
+              <div class="project-links">
+                <a
+                  href="https://github.com/Zigartpro/Proyecto-Gestion-de-Conocimiento-"
+                  target="_blank"
+                  title="Código"
+                  ><i class="fab fa-github"></i
+                ></a>
+              </div>
+            </div>
+            <div class="project-title">
+              Sistema de Gestión de Inventario (.NET)
+            </div>
+            <div class="project-desc">
+              Sistema de inventario con roles de usuario, módulo de ventas y
+              gráficos de análisis. Construido con .NET Core MVC y base de datos
+              relacional SQL.
+            </div>
+            <div class="project-stack">
+              <span class="stack-tag">C#</span
+              ><span class="stack-tag">.NET Core</span>
+              <span class="stack-tag">SQL Server</span
+              ><span class="stack-tag">JavaScript</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTS -->
+    <section id="certs">
+      <div class="container">
+        <p class="section-label">// formación</p>
+        <h2 class="section-title">Certificaciones</h2>
+        <div class="certs-grid">
+          <div class="cert-card">
+            <div class="cert-icon">🏅</div>
+            <div class="cert-info">
+              <div class="cert-name">Network Technician Career Path</div>
+              <div class="cert-issuer">Cisco Networking Academy</div>
+            </div>
+            <div class="cert-date">Jun 2025</div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-icon">🏆</div>
+            <div class="cert-info">
+              <div class="cert-name">Learn-A-Thon 2025</div>
+              <div class="cert-issuer">Cisco Networking Academy</div>
+            </div>
+            <div class="cert-date">Jun 2025</div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-icon">🌐</div>
+            <div class="cert-info">
+              <div class="cert-name">Introducción a Cisco Packet Tracer</div>
+              <div class="cert-issuer">Cisco Networking Academy</div>
+            </div>
+            <div class="cert-date">Mar 2025</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <p class="section-label">// hablemos</p>
+        <h2 class="section-title">Contacto</h2>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <p>
+              Estoy buscando mi primera oportunidad como desarrollador o
+              analista de datos. Si tienes un proyecto interesante o una
+              posición abierta, me encantaría conversar.
+            </p>
+            <div class="contact-links">
+              <a class="contact-link" href="mailto:lugosarmiento7@gmail.com"
+                ><i class="fa-solid fa-envelope"></i>
+                lugosarmiento7@gmail.com</a
+              >
+              <a class="contact-link" href="tel:+573227007466"
+                ><i class="fa-solid fa-phone"></i> +57 322 700 7466</a
+              >
+              <a
+                class="contact-link"
+                href="https://github.com/Zigartpro"
+                target="_blank"
+                ><i class="fab fa-github"></i> github.com/Zigartpro</a
+              >
+              <a
+                class="contact-link"
+                href="https://linkedin.com/in/duvansarmiento"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i>
+                linkedin.com/in/duvansarmiento</a
+              >
+              <a class="contact-link" href="#"
+                ><i class="fa-solid fa-location-dot"></i> Facatativá,
+                Colombia</a
+              >
+            </div>
+          </div>
+          <div class="contact-form">
+            <div class="form-group">
+              <label>nombre</label>
+              <input type="text" placeholder="Tu nombre" />
+            </div>
+            <div class="form-group">
+              <label>email</label>
+              <input type="email" placeholder="tu@email.com" />
+            </div>
+            <div class="form-group">
+              <label>mensaje</label>
+              <textarea
+                rows="5"
+                placeholder="Cuéntame sobre la oportunidad..."
+              ></textarea>
+            </div>
+            <button class="btn btn-primary" style="align-self: flex-start">
+              <i class="fa-solid fa-paper-plane"></i> Enviar mensaje
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      Diseñado y construido por <span>Duvan Federico Sarmiento Lugo</span> ·
+      2025
+    </footer>
+
+    <script>
+      // Project filter
+      const tabs = document.querySelectorAll(".tab-btn");
+      const cards = document.querySelectorAll(".project-card");
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          tabs.forEach((t) => t.classList.remove("active"));
+          tab.classList.add("active");
+          const filter = tab.dataset.filter;
+          cards.forEach((card) => {
+            if (filter === "all" || card.dataset.cat === filter) {
+              card.classList.remove("hidden");
+            } else {
+              card.classList.add("hidden");
+            }
+          });
+        });
+      });
+
+      // Scroll nav highlight
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".nav-links a");
+      window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach((s) => {
+          if (window.scrollY >= s.offsetTop - 100) current = s.id;
+        });
+        navLinks.forEach((a) => {
+          a.style.color =
+            a.getAttribute("href") === "#" + current ? "var(--accent2)" : "";
+        });
+      });
+    </script>
+  </body>
+</html>
