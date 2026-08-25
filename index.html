@@ -1367,29 +1367,30 @@
         max-height: 85vh !important;
       }
     </style>
-    <script type="module">
-      import { createChat } from "https://cdn.jsdelivr.net/npm/@n8n/chat/chat.bundle.es.js";
-      createChat({
-        webhookUrl: "YOUR_N8N_WEBHOOK_URL",
-        target: "#n8n-chat",
-        mode: "window",
-        showWelcomeScreen: false,
-        defaultLanguage: "en",
-        initialMessages: [
-          "¡Hola! 👋 Soy el asistente virtual de Duvan.",
-          "Pregúntame sobre sus proyectos, stack técnico o experiencia.",
-        ],
-        i18n: {
-          en: {
-            title: "Duvan AI Assistant 🤖",
-            subtitle: "Pregunta lo que quieras sobre mi perfil.",
-            footer: "",
-            getStarted: "Nueva conversación",
-            inputPlaceholder: "Escribe tu pregunta...",
-          },
-        },
-      });
-    </script>
+<script type="module">
+  import { createChat } from "https://cdn.jsdelivr.net/npm/@n8n/chat/chat.bundle.es.js";
+  createChat({
+    // ⚠️ Coloca aquí tu URL del nodo Chat Trigger en n8n
+    webhookUrl: "http://2.29.14.35:5678/webhook/429c8120-9d2c-4c7d-9654-88996a417aeb/chat",
+    target: "#n8n-chat",
+    mode: "window",
+    showWelcomeScreen: false,
+    defaultLanguage: "es", // Cambiado a español
+    initialMessages: [
+      "¡Hola! 👋 Soy el asistente virtual de Duvan.",
+      "Pregúntame sobre sus proyectos, stack técnico o experiencia.",
+    ],
+    i18n: {
+      es: {
+        title: "Duvan AI Assistant 🤖",
+        subtitle: "Pregunta lo que quieras sobre mi perfil.",
+        footer: "",
+        getStarted: "Nueva conversación",
+        inputPlaceholder: "Escribe tu pregunta...",
+      },
+    },
+  });
+</script>
 
     <script>
       // Project filter
