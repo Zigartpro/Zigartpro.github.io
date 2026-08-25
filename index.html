@@ -1316,6 +1316,7 @@
       2. En el Chat Trigger, agrega este dominio (https://zigartpro.github.io) en "Allowed Origins (CORS)".
       3. El workflow debe estar Activo (Active) en n8n.
     -->
+    <div id="n8n-chat"></div>
     <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/style.css" rel="stylesheet" />
     <style>
       /* Paleta del widget alineada con el portafolio */
@@ -1346,11 +1347,31 @@
         --chat--toggle--color: #fff;
         --chat--toggle--size: 60px;
       }
+
+      /* Evita que el h1/p globales de la página se cuelen en el header del widget */
+      #n8n-chat .chat-header h1 {
+        font-size: 1.15rem !important;
+        font-weight: 600 !important;
+        line-height: 1.3 !important;
+        margin: 0 0 0.25rem 0 !important;
+      }
+      #n8n-chat .chat-header p {
+        font-size: 0.85rem !important;
+        font-weight: 400 !important;
+        margin: 0 !important;
+      }
+      #n8n-chat .chat-header {
+        padding: 1rem 1.25rem !important;
+      }
+      #n8n-chat .chat-window {
+        max-height: 85vh !important;
+      }
     </style>
     <script type="module">
       import { createChat } from "https://cdn.jsdelivr.net/npm/@n8n/chat/chat.bundle.es.js";
       createChat({
         webhookUrl: "YOUR_N8N_WEBHOOK_URL",
+        target: "#n8n-chat",
         mode: "window",
         showWelcomeScreen: false,
         defaultLanguage: "en",
