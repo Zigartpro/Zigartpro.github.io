@@ -1247,7 +1247,7 @@
         <div class="contact-grid">
           <div class="contact-info">
             <p>
-              Estoy buscando oportunidades como desarrollador o
+              Estoy buscando mi primera oportunidad como desarrollador o
               analista de datos. Si tienes un proyecto interesante o una
               posición abierta, me encantaría conversar.
             </p>
@@ -1366,31 +1366,80 @@
       #n8n-chat .chat-window {
         max-height: 85vh !important;
       }
-    </style>
-<script type="module">
-  import { createChat } from "https://cdn.jsdelivr.net/npm/@n8n/chat/chat.bundle.es.js";
 
-  createChat({
-    webhookUrl: "http://2.29.14.35:5678/webhook/429c8120-9d2c-4c7d-9654-88996a417aeb/chat",
-    target: "#n8n-chat",
-    mode: "window",
-    showWelcomeScreen: false,
-    defaultLanguage: "en",
-    initialMessages: [
-      "¡Hola! 👋 Soy el asistente virtual de Duvan.",
-      "Pregúntame sobre sus proyectos, stack técnico o experiencia.",
-    ],
-    i18n: {
-      en: {
-        title: "Duvan AI Assistant 🤖",
-        subtitle: "Pregunta lo que quieras sobre mi perfil.",
-        footer: "",
-        getStarted: "Nueva conversación",
-        inputPlaceholder: "Escribe tu pregunta...",
-      },
-    },
-  });
-</script>
+      /* Bug conocido de @n8n/chat: el cuadro de texto (.chat-inputs) puede
+         perder su estilo y quedar invisible/colapsado al embeberse. Se
+         fuerza explícitamente. */
+      #n8n-chat .chat-inputs {
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.5rem !important;
+        padding: 0.75rem 1rem !important;
+        border-top: 1px solid var(--border) !important;
+        background: var(--bg3) !important;
+        min-height: 60px !important;
+        box-sizing: border-box !important;
+      }
+      #n8n-chat .chat-inputs textarea {
+        flex: 1 1 auto !important;
+        display: block !important;
+        min-height: 40px !important;
+        max-height: 120px !important;
+        padding: 0.6rem 0.9rem !important;
+        border: 1px solid var(--border) !important;
+        border-radius: 8px !important;
+        background: var(--bg2) !important;
+        color: var(--text) !important;
+        font-family: var(--font-display) !important;
+        font-size: 0.9rem !important;
+        resize: none !important;
+        box-sizing: border-box !important;
+      }
+      #n8n-chat .chat-inputs textarea:focus {
+        outline: none !important;
+        border-color: var(--accent) !important;
+      }
+      #n8n-chat .chat-inputs-controls {
+        display: flex !important;
+        align-items: center !important;
+      }
+      #n8n-chat .chat-input-send-button {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: var(--accent) !important;
+        color: #fff !important;
+        border: none !important;
+        border-radius: 50% !important;
+        width: 40px !important;
+        height: 40px !important;
+        min-width: 40px !important;
+        cursor: pointer !important;
+      }
+    </style>
+    <script type="module">
+      import { createChat } from "https://cdn.jsdelivr.net/npm/@n8n/chat/chat.bundle.es.js";
+      createChat({
+        webhookUrl: "https://elder-priest-offerings-perform.trycloudflare.com/webhook/429c8120-9d2c-4c7d-9654-88996a417aeb/chat",
+        target: "#n8n-chat",
+        mode: "window",
+        showWelcomeScreen: false,
+        defaultLanguage: "en",
+        initialMessages: [
+          "¡Hola! 👋 Soy el asistente virtual de Duvan.",
+          "Pregúntame sobre sus proyectos, stack técnico o experiencia.",
+        ],
+        i18n: {
+          en: {
+            title: "Duvan AI Assistant 🤖",
+            subtitle: "Pregunta lo que quieras sobre mi perfil.",
+            footer: "",
+            getStarted: "Nueva conversación",
+            inputPlaceholder: "Escribe tu pregunta...",
+          },
+        },
+      });
+    </script>
 
     <script>
       // Project filter
