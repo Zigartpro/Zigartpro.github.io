@@ -589,37 +589,34 @@
       .contact-link:hover {
         color: var(--accent2);
       }
-      .contact-form {
+      .contact-chat-cta {
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
         gap: 1rem;
-      }
-      .form-group {
-        display: flex;
-        flex-direction: column;
-        gap: 0.4rem;
-      }
-      .form-group label {
-        font-size: 0.82rem;
-        color: var(--muted);
-        font-family: var(--font-mono);
-      }
-      .form-group input,
-      .form-group textarea {
         background: var(--bg3);
         border: 1px solid var(--border);
-        border-radius: 6px;
-        padding: 0.75rem 1rem;
-        color: var(--text);
-        font-family: var(--font-display);
-        font-size: 0.95rem;
-        transition: border-color 0.2s;
-        resize: none;
+        border-radius: 14px;
+        padding: 2.5rem;
+        transition: border-color 0.25s, transform 0.25s;
       }
-      .form-group input:focus,
-      .form-group textarea:focus {
-        outline: none;
+      .contact-chat-cta:hover {
         border-color: var(--accent);
+        transform: translateY(-3px);
+      }
+      .contact-chat-icon {
+        font-size: 2.5rem;
+        line-height: 1;
+      }
+      .contact-chat-cta h3 {
+        font-size: 1.3rem;
+        color: var(--text);
+        margin: 0;
+      }
+      .contact-chat-cta p {
+        color: var(--muted);
+        line-height: 1.7;
+        margin: 0;
       }
 
       /* ── FOOTER ── */
@@ -852,6 +849,21 @@
         <h2 class="section-title">Experiencia</h2>
         <div class="timeline">
           <div class="timeline-item">
+            <div class="timeline-date">Ago 2026</div>
+            <div class="timeline-title">
+              Posgrado / Especialización en Inteligencia Artificial
+            </div>
+            <div class="timeline-company">
+              Universidad de Cundinamarca
+            </div>
+            <ul class="timeline-desc">
+              <li>
+                Profundización en Machine Learning, automatización con IA y
+                orquestación de modelos de lenguaje.
+              </li>
+            </ul>
+          </div>
+          <div class="timeline-item">
             <div class="timeline-date">Nov 2023 — Dic 2024 · 13 meses</div>
             <div class="timeline-title">
               Analista Junior &amp; Desarrollador de Software
@@ -874,21 +886,6 @@
               </li>
               <li>
                 Trabajo bajo metodología Scrum en ciclos de entrega iterativos.
-              </li>
-            </ul>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-date">Ago 2026</div>
-            <div class="timeline-title">
-              Posgrado / Especialización en Inteligencia Artificial
-            </div>
-            <div class="timeline-company">
-              Universidad de Cundinamarca
-            </div>
-            <ul class="timeline-desc">
-              <li>
-                Profundización en Machine Learning, automatización con IA y
-                orquestación de modelos de lenguaje.
               </li>
             </ul>
           </div>
@@ -1280,29 +1277,34 @@
               >
             </div>
           </div>
-          <div class="contact-form">
-            <div class="form-group">
-              <label>nombre</label>
-              <input type="text" placeholder="Tu nombre" />
-            </div>
-            <div class="form-group">
-              <label>email</label>
-              <input type="email" placeholder="tu@email.com" />
-            </div>
-            <div class="form-group">
-              <label>mensaje</label>
-              <textarea
-                rows="5"
-                placeholder="Cuéntame sobre la oportunidad..."
-              ></textarea>
-            </div>
-            <button class="btn btn-primary" style="align-self: flex-start">
-              <i class="fa-solid fa-paper-plane"></i> Enviar mensaje
+          <div class="contact-chat-cta">
+            <div class="contact-chat-icon">🤖</div>
+            <h3>¿Prefieres escribirme directo?</h3>
+            <p>
+              Usa mi asistente de IA — está conectado a mi perfil y puede
+              responder sobre mis proyectos, mi stack técnico o mi
+              disponibilidad al instante. También puedes dejarme tu mensaje
+              ahí mismo.
+            </p>
+            <button type="button" class="btn btn-primary" id="open-chat-btn">
+              <i class="fa-solid fa-comment-dots"></i> Abrir el chat
             </button>
           </div>
         </div>
       </div>
     </section>
+
+    <script>
+      // Abre el widget de chat de n8n al hacer clic en el CTA de la sección de contacto
+      document
+        .getElementById("open-chat-btn")
+        .addEventListener("click", function () {
+          const toggle = document.querySelector(
+            "#n8n-chat .chat-window-toggle"
+          );
+          if (toggle) toggle.click();
+        });
+    </script>
 
     <!-- FOOTER -->
     <footer>
@@ -1348,54 +1350,97 @@
         --chat--toggle--size: 60px;
       }
 
-      /* Evita que el h1/p globales de la página se cuelen en el header del widget */
+      /* Evita que el h1/p globales de la página se cuelen en el header del widget,
+         y le da fondo/color oscuro explícito (el paquete no siempre respeta las
+         variables --chat--color-* en el header). */
+      #n8n-chat .chat-header {
+        padding: 1rem 1.25rem !important;
+        background: var(--bg2) !important;
+        border-bottom: 1px solid var(--border) !important;
+      }
       #n8n-chat .chat-header h1 {
         font-size: 1.15rem !important;
         font-weight: 600 !important;
         line-height: 1.3 !important;
         margin: 0 0 0.25rem 0 !important;
+        color: var(--text) !important;
       }
       #n8n-chat .chat-header p {
         font-size: 0.85rem !important;
         font-weight: 400 !important;
         margin: 0 !important;
-      }
-      #n8n-chat .chat-header {
-        padding: 1rem 1.25rem !important;
+        color: var(--muted) !important;
       }
       #n8n-chat .chat-window {
         max-height: 85vh !important;
+        background: var(--bg) !important;
+        border: 1px solid var(--border) !important;
+        border-radius: 14px !important;
+        overflow: hidden !important;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45) !important;
+      }
+      #n8n-chat .chat-body,
+      #n8n-chat .chat-messages-list {
+        background: var(--bg) !important;
+      }
+      #n8n-chat .chat-message-from-bot .chat-message-markdown,
+      #n8n-chat .chat-message {
+        border: 1px solid var(--border) !important;
       }
 
       /* Bug conocido de @n8n/chat: el cuadro de texto (.chat-inputs) puede
-         perder su estilo y quedar invisible/colapsado al embeberse. Se
-         fuerza explícitamente. */
-      #n8n-chat .chat-inputs {
+         perder su estilo, y los navegadores aplican estilos nativos de
+         formulario que ignoran el background salvo que se desactive el
+         "appearance" por defecto. Se fuerza todo explícitamente. */
+      #n8n-chat .chat-inputs,
+      #n8n-chat form {
         display: flex !important;
         align-items: center !important;
         gap: 0.5rem !important;
         padding: 0.75rem 1rem !important;
         border-top: 1px solid var(--border) !important;
-        background: var(--bg3) !important;
+        background: var(--bg2) !important;
         min-height: 60px !important;
         box-sizing: border-box !important;
+        border-radius: 0 0 14px 14px !important;
       }
-      #n8n-chat .chat-inputs textarea {
+      #n8n-chat .chat-inputs textarea,
+      #n8n-chat .chat-inputs-controls textarea,
+      #n8n-chat form textarea,
+      #n8n-chat textarea {
+        -webkit-appearance: none !important;
+        appearance: none !important;
+        color-scheme: dark !important;
         flex: 1 1 auto !important;
         display: block !important;
+        width: 100% !important;
         min-height: 40px !important;
         max-height: 120px !important;
         padding: 0.6rem 0.9rem !important;
         border: 1px solid var(--border) !important;
         border-radius: 8px !important;
-        background: var(--bg2) !important;
+        background: var(--bg3) !important;
+        background-color: var(--bg3) !important;
         color: var(--text) !important;
         font-family: var(--font-display) !important;
         font-size: 0.9rem !important;
         resize: none !important;
         box-sizing: border-box !important;
+        outline: none !important;
+        box-shadow: none !important;
+        overflow-y: auto !important;
+        scrollbar-width: none !important;
       }
-      #n8n-chat .chat-inputs textarea:focus {
+      #n8n-chat textarea::-webkit-scrollbar {
+        width: 0 !important;
+        height: 0 !important;
+        display: none !important;
+      }
+      #n8n-chat textarea::placeholder {
+        color: var(--muted) !important;
+        opacity: 1 !important;
+      }
+      #n8n-chat textarea:focus {
         outline: none !important;
         border-color: var(--accent) !important;
       }
@@ -1403,18 +1448,59 @@
         display: flex !important;
         align-items: center !important;
       }
-      #n8n-chat .chat-input-send-button {
+      #n8n-chat .chat-input-send-button,
+      #n8n-chat .chat-inputs-controls button,
+      #n8n-chat .chat-inputs button {
+        -webkit-appearance: none !important;
+        appearance: none !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
         background: var(--accent) !important;
+        background-color: var(--accent) !important;
         color: #fff !important;
         border: none !important;
-        border-radius: 50% !important;
-        width: 40px !important;
-        height: 40px !important;
-        min-width: 40px !important;
+        border-radius: 8px !important;
+        width: 34px !important;
+        height: 34px !important;
+        min-width: 34px !important;
+        padding: 0 !important;
+        flex-shrink: 0 !important;
         cursor: pointer !important;
+        box-shadow: none !important;
+        transition: background 0.15s ease, transform 0.15s ease !important;
+      }
+      #n8n-chat .chat-input-send-button:hover,
+      #n8n-chat .chat-inputs-controls button:hover,
+      #n8n-chat .chat-inputs button:hover {
+        background: var(--accent2) !important;
+        background-color: var(--accent2) !important;
+        transform: scale(1.06) !important;
+      }
+      #n8n-chat .chat-input-send-button svg,
+      #n8n-chat .chat-inputs-controls button svg,
+      #n8n-chat .chat-inputs button svg {
+        fill: #fff !important;
+        color: #fff !important;
+        width: 16px !important;
+        height: 16px !important;
+      }
+
+      /* Scrollbar del panel de mensajes, para que combine con el resto del sitio */
+      #n8n-chat .chat-messages-list::-webkit-scrollbar {
+        width: 6px;
+      }
+      #n8n-chat .chat-messages-list::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      #n8n-chat .chat-messages-list::-webkit-scrollbar-thumb {
+        background: var(--border);
+        border-radius: 3px;
+      }
+
+      /* Botón flotante que abre/cierra el chat */
+      #n8n-chat .chat-window-toggle {
+        box-shadow: 0 8px 24px rgba(108, 99, 255, 0.4) !important;
       }
     </style>
     <script type="module">
